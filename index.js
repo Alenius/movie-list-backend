@@ -9,6 +9,10 @@ API_KEY = process.env.OMDB_API_KEY;
 console.log({ API_KEY });
 BASE_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
 
+app.get("/", (req, res) => {
+  res.send("use the /movie endpoint to get movie info");
+});
+
 app.get("/movie", (req, res) => {
   fetch(`${BASE_URL}&t=${req.query.title}`)
     .then((res) => res.json())
