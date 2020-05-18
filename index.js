@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const fetch = require("node-fetch");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 API_KEY = process.env.OMDB_API_KEY;
 console.log({ API_KEY });
